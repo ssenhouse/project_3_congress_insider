@@ -31,7 +31,7 @@ from bokeh.resources import INLINE
 
 # Date range
 today = datetime.date.today()
-start_date = today - datetime.timedelta(days=365*1) #trading days(252) * amount of years to go back 
+start_date = today - datetime.timedelta(days=365*3) #trading days(252) * amount of years to go back 
 
 start = start_date.strftime("%Y-%m-%d")
 end = today.strftime("%Y-%m-%d")
