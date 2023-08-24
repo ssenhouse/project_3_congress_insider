@@ -10,7 +10,6 @@ import pandas as pd
 import requests
 import json
 import time
-from PIL import Image
 
 
 # URL of the JSON file
@@ -80,58 +79,34 @@ for cg in data: # data list
 def setup():
     print("What does your Congressman do?")
     
+st.markdown("# Congress member info")
+st.markdown("## Lookup Committee details for Congressman who trade in the markets")
 
-# Set page config to wide layout
-st.set_page_config(layout="wide")
+page_bg_img = '''
+<style>
+body {
+background-image: url("https://images.unsplash.com/photo-1520525003249-2b9cdda513bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80");
+background-size: cover;
+}
+</style>'''
 
-#Add page text
-st.title("Two Faced Assest")
-st.subheader("Lookup Committee details for Congressman who trade in the markets")
+st.markdown(page_bg_img, unsafe_allow_html=True)
 
-
-#Set Streamlit app background
-#image_url = "https://images.unsplash.com/photo-1520525003249-2b9cdda513bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80"
-image_url = "https://images.unsplash.com/photo-1600870003315-e1c945702030?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80"
-response = requests.get(image_url, stream=True)
-#img = Image.open(response.raw).convert("RGB")
-
-#function to set background
-def set_background_image(image):
-    page_bg_img = '''
-        <style>
-        .stApp {
-            background-image: url("''' + image + '''");
-            background-size: cover;
-        }
-        </style>
-    '''
-    st.markdown(page_bg_img, unsafe_allow_html=True)
-
-#set background and fonts
-set_background_image(image_url)
-
-#Receive user input
 congressman = st.selectbox(label= "Select a Congressman", options= list_members)
 
 if st.button("Get Info"):
-    st.header("Congress member info")
     if congressman in served_terms:
-        st.subheader(congressman)
+        st.header(congressman)
         st.write("First term start: ", served_terms[congressman]["start"])
         st.write("Last/Current term end: ", served_terms[congressman]["end"])
         member_committees = merged_committee_df.loc[merged_committee_df['member_name'] == congressman]
         st.dataframe(member_committees)
         st.info('I wonder how much they :moneybag: made with committee knowledge?')
         time.sleep(.5)
-        if congressman == "Garret Graves":
-            img= Image.open('images/Garret Graves.png')
-            st.image(img)
-
-
-        #st.info('hhhmmmm :grey_question:')
-        #st.info('hhhmmmm :grey_question:')
-        #st.info('hhhmmmm :grey_question:')
-        #st.info('hhhmmmm :grey_question:')
-        #time.sleep(.5)
-        #st.info(':no_mouth:')
+        st.info('hhhmmmm :grey_question:')
+        st.info('hhhmmmm :grey_question:')
+        st.info('hhhmmmm :grey_question:')
+        st.info('hhhmmmm :grey_question:')
+        time.sleep(.5)
+        st.info(':no_mouth:')
                                                 
