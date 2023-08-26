@@ -90,10 +90,9 @@ st.subheader("Lookup Committee details for Congressman who trade in the markets"
 
 
 #Set Streamlit app background
-#image_url = "https://images.unsplash.com/photo-1520525003249-2b9cdda513bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80"
 image_url = "https://images.unsplash.com/photo-1600870003315-e1c945702030?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80"
 response = requests.get(image_url, stream=True)
-#img = Image.open(response.raw).convert("RGB")
+
 
 #function to set background
 def set_background_image(image):
@@ -127,11 +126,4 @@ if st.button("Get Info"):
             img= Image.open('images/Garret Graves.png')
             st.image(img)
 
-
-        #st.info('hhhmmmm :grey_question:')
-        #st.info('hhhmmmm :grey_question:')
-        #st.info('hhhmmmm :grey_question:')
-        #st.info('hhhmmmm :grey_question:')
-        #time.sleep(.5)
-        #st.info(':no_mouth:')
                                                 
