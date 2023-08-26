@@ -8,7 +8,7 @@ This project assesses the purchases and sales of congressmen to verify whether o
 - [UnitedStates.io](https://www.unitedstates.io/)
 
 ## Project Objective
-Using data from the sources mentioned above, we clean, merge, and preprocess the data to use in a Machine Learning model. Our goal is to predict if a political party, based on their stock purchases or sales, will return a positive or negative value on average.
+We know that a great many of our leaders don't take office as a wealthy citizen but for those who server long enough, the do end leave office a bit closer the that one percent. Elected officials have capitalized on insider knowledge in the past so it stands to reason that they can and likely are still doing so. What we sought out to find out is if their trades are still profitable and if we can turn a profit trading the same way they do. Using data from the sources mentioned above, we cleaned, merged, and preprocessed the data for our Machine Learning model. Our goal is to find out if political party, committee membership and time in office are factors in their stock purchases or sales. We want to know if their returns are positive or negative on average.
 
 ## Data Cleaning and ETL
 The two API's that we used to gather our quantitative data, Yahoo Finance and Quiver allowed us to import (2) dataframes to serve as our raw data to clean and process. 
