@@ -6,9 +6,18 @@ This project assesses the purchases and sales of congressmen to verify whether o
 - [Quiver Quantitative's Congressional Trading API](https://www.quiverquant.com/)
 - [Yahoo Finance](https://finance.yahoo.com/) (via the `yfinance` Python library)
 - [UnitedStates.io](https://www.unitedstates.io/)
+
 ## Project Objective
 Using data from the sources mentioned above, we clean, merge, and preprocess the data to use in a Machine Learning model. Our goal is to predict if a political party, based on their stock purchases or sales, will return a positive or negative value on average.
+
+## Data Cleaning and ETL
+The two API's that we used to gather our quantitative data, Yahoo Finance and Quiver allowed us to import (2) dataframes to serve as our raw data to clean and process. 
+ Yahoo gave us a dataframe that gave the open, high, low, close, adjusted close prices, and volume of all of our 691 stock tickers over the time frame of 3 years, and Quiver gave us a dataframe of congressman’s transactions, the stocks they traded, and the dates that the transactions occurred and were reported.  Using the python libraries pandas, numpy, and datetime, we performed a series of merges, filters, and calculations to create a final dataframe that combined both sources of raw data to give us the financial information (tickers, prices, returns) per transaction per representative.  This final dataframe was then used as the basis for our machine learning model and streamlit UI.
+
+The streamlit UI also gathered legislative data from the UnitedStates.io API to provide background data about the representative chosen by the user.  The raw data was imported in JSON format and had to be parsed and transformed into dataframes to be applicable and presentable on the streamlit UI.
+
 ## Setup & Installation
+
 ### Jupyter Notebook Dependencies:
 For `Full_Congress_Data.ipynb`:
 ```python
